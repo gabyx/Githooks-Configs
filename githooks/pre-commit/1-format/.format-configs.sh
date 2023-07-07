@@ -14,7 +14,7 @@ assertStagedFiles || die "Could not assert staged files."
 
 printHeader "Running hook: Prettier format ..."
 
-assertConfigsFormatVersion "2.8.3" "3.0.0"
+assertConfigsFormatVersion "3.0.0" "4.0.0"
 
 regex=$(getGeneralConfigsFileRegex) || die "Could not get docs file regex."
 parallelForFiles formatConfigsFile \
