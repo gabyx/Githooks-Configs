@@ -39,7 +39,7 @@ function printError() {
 
 # Print a hook header info to stderr (git hooks)
 function printHeader() {
-    _print "[0;94m" "" "githooks-configsdocs:: " "$@" >&2
+    _print "[0;94m" "" "githooks-configs:: " "$@" >&2
     return 0
 }
 
