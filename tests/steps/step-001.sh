@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # shellcheck disable=SC1090,SC1091,SC2015
 # Test:
 #   Run format configs hook on staged files
