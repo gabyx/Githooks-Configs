@@ -4,14 +4,14 @@ LABEL name=githooks-configs
 
 RUN apk add git tar curl xz bash coreutils findutils grep sed parallel && \
     apk add npm && \
-    npm install -g prettier@3.0.0 @mixer/parallel-prettier@2.0.3
+    npm install -g prettier@3.1.0 @mixer/parallel-prettier@2.0.3
 
-RUN git config --system --add safe.directory "*" 
+RUN git config --system --add safe.directory "*"
 
 VOLUME [ "/mnt/workspace" ]
 VOLUME [ "/mnt/shared" ]
 
-FROM githooks-configs-base as githooks-configs-user 
+FROM githooks-configs-base as githooks-configs-user
 ARG ROOT_ACCESS=false
 
 ARG USER_UID=1000
