@@ -23,7 +23,7 @@ function help() {
 }
 
 function parseArgs() {
-    local prev_p
+    local prev=""
 
     for p in "$@"; do
         if [ "$p" = "--force" ]; then
@@ -33,15 +33,15 @@ function parseArgs() {
             return 1
         elif [ "$p" = "--dir" ]; then
             true
-        elif [ "$prev_p" = "--dir" ]; then
+        elif [ "$prev" = "--dir" ]; then
             dir="$p"
         elif [ "$p" = "--exclude-ignore-path" ]; then
             true
-        elif [ "$prev_p" = "--exclude-ignore-path" ]; then
+        elif [ "$prev" = "--exclude-ignore-path" ]; then
             excludeIgnorePath="$p"
         elif [ "$p" = "--glob-pattern" ]; then
             true
-        elif [ "$prev_p" = "--glob-pattern" ]; then
+        elif [ "$prev" = "--glob-pattern" ]; then
             fileGlob="$p"
         else
             printError "! Unknown argument \`$p\`"
@@ -49,7 +49,7 @@ function parseArgs() {
             return 1
         fi
 
-        prev_p="$p"
+        prev="$p"
     done
 }
 
