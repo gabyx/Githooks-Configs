@@ -12,7 +12,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 dryRun="true"
 dir=""
 excludeRegex=""
-regex=$(getGeneralShellFileRegex)
+regex=$(getGeneralConfigsFileRegex)
 
 function help() {
     printError "Usage:" \
